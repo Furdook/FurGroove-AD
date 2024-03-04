@@ -1,3 +1,120 @@
+"use client";
+
+import Link from "next/link";
+
+import { useEffect, useLayoutEffect, useState } from "react";
+
+const menuItems = [
+  {
+    title: "Information",
+    link: "#",
+  },
+  {
+    title: "Location",
+    link: "#",
+  },
+  {
+    title: "Tickets",
+    link: "#",
+  },
+  {
+    title: "Artists",
+    link: "#",
+  },
+  {
+    title: "Terms of Service",
+    link: "#",
+  },
+  {
+    title: "Team",
+    link: "#",
+  },
+  {
+    title: "Contact",
+    link: "#",
+  },
+];
+const handleMenuOpen = () => {
+  const menu = document.getElementById("menu")!;
+  const stripes = document.querySelectorAll(".stripe");
+
+  if (menu.classList.contains("hidden")) {
+    menu.classList.remove("hidden");
+    menu.classList.add("flex");
+
+    stripes.forEach((stripe) => {
+      stripe.classList.add("bg-accent-500");
+    });
+  } else {
+    menu.classList.add("hidden");
+    menu.classList.remove("flex");
+
+    stripes.forEach((stripe) => {
+      stripe.classList.remove("bg-accent-500");
+    });
+  }
+};
+
 export default function Navigation() {
-  return <nav></nav>;
+  const [isReady, setIsReady] = useState(false);
+
+  if (typeof window !== "undefined") {
+    window.onresize = () => {
+      if (window.innerWidth < 1024) {
+        setIsReady(true);
+      } else {
+        setIsReady(false);
+      }
+    };
+  }
+
+  useLayoutEffect(() => {
+    setIsReady(window.innerWidth < 1024);
+  }, []);
+
+  return (
+    <nav className="fixed w-full">
+      {isReady ? (
+        <label
+          htmlFor="burger__input"
+          className="group fixed right-6 top-4 hover:cursor-pointer"
+          tabIndex={1}
+          onKeyDown={(e) => {
+            e.key === "Enter" && handleMenuOpen();
+          }}
+        >
+          <input
+            id="burger__input"
+            type="checkbox"
+            className="hidden"
+            onClick={handleMenuOpen}
+          />
+          <div id="burger" className="flex flex-col gap-2">
+            <div className="stripe h-1 w-12 rounded-sm bg-accent-400 group-hover:bg-accent-500"></div>
+            <div className="stripe duration-400 ml-auto h-1 w-10 rounded-sm bg-accent-400 transition-all group-hover:w-12 group-hover:bg-accent-500"></div>
+            <div className="stripe ml-auto h-1 w-8 rounded-sm bg-accent-400 transition-all duration-300 group-hover:w-12 group-hover:bg-accent-500"></div>
+          </div>
+        </label>
+      ) : null}
+
+      <ul
+        id="menu"
+        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 bg-primary-900 text-right tracking-widest lg:mx-auto lg:mt-4 lg:flex lg:max-w-4xl lg:flex-row lg:justify-around lg:bg-opacity-0"
+      >
+        {menuItems.map((item, index) => {
+          return (
+            <li key={index} className="">
+              <Link
+                href={item.link}
+                className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
+                onClick={handleMenuOpen}
+              >
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 }
