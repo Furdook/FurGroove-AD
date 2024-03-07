@@ -24,10 +24,10 @@ export default function Team() {
   return (
     <section
       id="artists"
-      className="flex h-screen flex-col items-center justify-center"
+      className="mt-96 flex h-screen flex-col items-center justify-center"
     >
-      {test.map((artist) => (
-        <Container {...artist} />
+      {test.map((artist, index) => (
+        <Container key={index} {...artist} />
       ))}
     </section>
   );

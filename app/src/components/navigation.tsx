@@ -55,7 +55,7 @@ const handleMenuOpen = () => {
   }
 };
 
-const handleSelected = (index: number) => {
+const handleSelected = (index: number, link: string) => {
   const menuItem = document.querySelectorAll("li");
   menuItem.forEach((item) => {
     item.removeAttribute("aria-selected");
@@ -74,6 +74,16 @@ export default function Navigation() {
         setIsReady(false);
       }
     };
+    window.onscroll = () => {
+      const menu = document.getElementById("nav")!;
+      if (window.scrollY < 500 || window.scrollY > 3500) {
+        menu.style.backgroundColor = "#131316";
+      } else if (window.scrollY < 1400 || window.scrollY > 3000) {
+        menu.style.backgroundColor = "transparent";
+      } else if (window.scrollY > 1400) {
+        menu.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      }
+    };
   }
 
   useLayoutEffect(() => {
@@ -81,7 +91,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="fixed z-10 w-full">
+    <nav id="nav" className="fixed z-10 w-screen">
       {isReady ? (
         <label
           htmlFor="burger__input"
@@ -107,7 +117,7 @@ export default function Navigation() {
 
       <ul
         id="menu"
-        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 bg-primary-900 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-4"
+        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8  text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-4"
       >
         {menuItems.map((item, index) => {
           return (
@@ -117,7 +127,7 @@ export default function Navigation() {
                 className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
                 onClick={() => {
                   handleMenuOpen;
-                  handleSelected(index);
+                  handleSelected(index, item.link);
                 }}
               >
                 {item.title}

@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       primary: {
+        950: "#000",
         900: "#131316",
         800: "#1C1C21",
         700: "#26262C",
