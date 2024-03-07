@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 const menuItems = [
   {
@@ -55,6 +55,14 @@ const handleMenuOpen = () => {
   }
 };
 
+const handleSelected = (index: number) => {
+  const menuItem = document.querySelectorAll("li");
+  menuItem.forEach((item) => {
+    item.removeAttribute("aria-selected");
+  });
+  menuItem[index].setAttribute("aria-selected", "true");
+};
+
 export default function Navigation() {
   const [isReady, setIsReady] = useState(false);
 
@@ -73,12 +81,12 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="fixed w-full">
+    <nav className="fixed z-10 w-full">
       {isReady ? (
         <label
           htmlFor="burger__input"
           className="group fixed right-6 top-4 hover:cursor-pointer"
-          tabIndex={1}
+          tabIndex={0}
           onKeyDown={(e) => {
             e.key === "Enter" && handleMenuOpen();
           }}
@@ -99,15 +107,18 @@ export default function Navigation() {
 
       <ul
         id="menu"
-        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 bg-primary-900 text-right tracking-widest lg:mx-auto lg:mt-4 lg:flex lg:max-w-4xl lg:flex-row lg:justify-around lg:bg-opacity-0"
+        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 bg-primary-900 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-4"
       >
         {menuItems.map((item, index) => {
           return (
-            <li key={index} className="">
+            <li key={index} className="text-2x lg:text-xl">
               <Link
                 href={item.link}
                 className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
-                onClick={handleMenuOpen}
+                onClick={() => {
+                  handleMenuOpen;
+                  handleSelected(index);
+                }}
               >
                 {item.title}
               </Link>
