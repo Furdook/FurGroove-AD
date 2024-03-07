@@ -1,11 +1,15 @@
-import Artists from "@/components/artists";
-import Landing from "@/components/landing";
+import Team from "./team/page";
+import Artists from "./artists/page";
 
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <Landing />
+      <section className="flex h-screen flex-col items-center justify-center">
+        <h1 className="text-4xl">[EVENT NAME]</h1>
+        <h2 className="text-accent-400">FORT33 - Leusden</h2>
+      </section>
       <Artists />
+      <Team />
     </main>
   );
 }

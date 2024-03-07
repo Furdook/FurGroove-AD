@@ -7,31 +7,31 @@ import { useLayoutEffect, useState } from "react";
 const menuItems = [
   {
     title: "Information",
-    link: "#",
+    link: "#info",
   },
   {
     title: "Location",
-    link: "#",
+    link: "#location",
   },
   {
     title: "Tickets",
-    link: "#",
+    link: "#tickets",
   },
   {
     title: "Artists",
-    link: "#",
+    link: "#artists",
   },
   {
     title: "Terms of Service",
-    link: "#",
+    link: "/tos",
   },
   {
     title: "Team",
-    link: "#",
+    link: "/team",
   },
   {
     title: "Contact",
-    link: "#",
+    link: "#contact",
   },
 ];
 const handleMenuOpen = () => {

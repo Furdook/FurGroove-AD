@@ -32,7 +32,7 @@ export default function Container(props: {
   };
 
   return (
-    <Card className="flex w-screen max-w-4xl flex-row px-16 sm:px-6">
+    <Card className="my-16 flex w-screen max-w-4xl flex-row px-16 sm:px-6">
       <Image
         src={props.image}
         alt={`${props.name}'s picture`}
