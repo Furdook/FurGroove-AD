@@ -68,20 +68,16 @@ export default function Navigation() {
 
   if (typeof window !== "undefined") {
     window.onresize = () => {
-      if (window.innerWidth < 1024) {
-        setIsReady(true);
-      } else {
-        setIsReady(false);
-      }
+      setIsReady(window.innerWidth < 1024);
     };
+
     window.onscroll = () => {
       const menu = document.getElementById("nav")!;
-      if (window.scrollY < 500 || window.scrollY > 3500) {
+
+      if (window.scrollY > 1200 && window.scrollY < 3000) {
+        menu.style.backgroundColor = "rgba(19, 19, 22, 0.8)";
+      } else {
         menu.style.backgroundColor = "#131316";
-      } else if (window.scrollY < 1400 || window.scrollY > 3000) {
-        menu.style.backgroundColor = "transparent";
-      } else if (window.scrollY > 1400) {
-        menu.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
       }
     };
   }

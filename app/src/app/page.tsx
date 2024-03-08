@@ -1,6 +1,6 @@
 import Team from "./team/page";
 import Artists from "./artists/page";
-import Information from "./information/page";
+import Information from "./information";
 
 export default function Home() {
   return (
