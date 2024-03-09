@@ -22,7 +22,7 @@ export default function Artists() {
     },
   ];
   return (
-    <section id="artists" className="mt-96 h-screen flex-col">
+    <section id="artists" className="h-screen flex-col">
       {test.map((artist, index) => (
         <Container key={index} {...artist} />
       ))}

@@ -9,7 +9,7 @@ export default function Information() {
       <img
         src="/djboy.webp"
         alt="Beatbird performing at FurGroove 1!"
-        className="h-96 w-96 w-full rounded-sm shadow-lg"
+        className="aspect-square w-full rounded-sm shadow-lg lg:max-w-96"
       />
       <p className="my-auto leading-8">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat in

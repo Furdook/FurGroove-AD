@@ -5,7 +5,7 @@ export default function Team() {
     {
       name: "Hunter",
       quote: "Dutch Boy liking big things",
-      position: "Head Organiser",
+      position: "Event Organiser",
       image: "/hunter.jpg",
       socials: {
         twitter: "HunterHuskyNL",

@@ -12,7 +12,7 @@ export default function Transition() {
   return (
     <section
       id="transition"
-      className="mb-56 w-screen transform overflow-x-hidden"
+      className="mb-24 w-screen transform overflow-x-hidden"
     >
       <div>
         <motion.div
