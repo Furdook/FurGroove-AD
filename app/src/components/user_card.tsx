@@ -52,13 +52,9 @@ export default function Container(props: {
 
         <section className="ml-[-104px] flex flex-col sm:ml-0 sm:mt-auto sm:h-full">
           <p className="relative my-8 sm:my-auto">
-            <span className="absolute top-[-16px] ml-[-24px] text-5xl text-accent-500">
-              “
-            </span>
+            <span className="top-[-16px] ml-[-24px]">“</span>
             {props.quote}
-            <span className="absolute bottom-[-44px] ml-1 text-5xl text-accent-500">
-              ”
-            </span>
+            <span className="bottom-[-44px] ml-1">”</span>
           </p>
           <CardFooter className=" flex flex-row gap-6">
             {props.socials &&

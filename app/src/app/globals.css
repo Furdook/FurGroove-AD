@@ -21,3 +21,9 @@ body {
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
+
+span {
+  position: absolute;
+  color: #5b89ea;
+  font-size: 3rem;
+}

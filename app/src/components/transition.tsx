@@ -21,7 +21,7 @@ export default function Transition() {
         >
           <img
             src="/test.webp"
-            className="my-56 h-screen object-cover"
+            className="my-56 h-screen object-cover will-change-transform"
             alt="Crowd picture from FurGroove 1.0"
           />
         </motion.div>
@@ -29,19 +29,15 @@ export default function Transition() {
           style={{
             translateY: shift_text,
           }}
-          className="mx-6"
+          className="mx-6 will-change-transform"
           id="info"
         >
-          <section className="mx-auto mb-96 flex max-w-4xl rounded-sm border-2 border-solid border-accent-500 bg-primary-900/80 p-6 leading-8">
-            <p className="z-40 my-auto">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
-              veniam, labore est voluptates blanditiis facere dolore, aperiam
-              quasi, earum nobis sunt? Unde rem voluptas sit distinctio
-              inventore omnis accusantium odit. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Temporibus repellendus, est et nisi
-              unde rerum quas reiciendis earum expedita in debitis facilis!
-              Consequatur laudantium repudiandae quod debitis maiores ab optio!
-            </p>
+          <section className="mx-auto mb-96 flex w-fit justify-center rounded-sm bg-primary-950/50 p-8 text-3xl leading-8 sm:text-4xl">
+            <h1 className="my-auto [text-shadow:_0_0_5px_rgb(0_0_0_/_100%)]">
+              <span className="top-2 ml-[-24px]">“</span>
+              Ready to bring out your gear?
+              <span className="bottom-[-1rem] ml-1">”</span>
+            </h1>
           </section>
         </motion.div>
       </div>
