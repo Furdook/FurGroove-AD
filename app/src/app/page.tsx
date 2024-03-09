@@ -1,6 +1,6 @@
 import Team from "./team/page";
 import Artists from "./artists/page";
-import Information from "./information";
+import Transition from "../components/transition";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="text-4xl">[EVENT NAME]</h1>
         <h2 className="text-accent-400">FORT33 - Leusden</h2>
       </section>
-      <Information />
+      <Transition />
       <Artists />
       <Team />
     </main>

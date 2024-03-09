@@ -24,7 +24,7 @@ export default function Team() {
   return (
     <section
       id="artists"
-      className="mt-96 flex h-screen flex-col items-center justify-center"
+      className="mt-[60vh] flex h-screen flex-col items-center justify-center"
     >
       {test.map((artist, index) => (
         <Container key={index} {...artist} />
