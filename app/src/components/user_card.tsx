@@ -19,11 +19,11 @@ export default function Container(props: {
   const socials: { [key: string]: { link: string; logo: string } } = {
     twitter: {
       link: "https://twitter.com/",
-      logo: "",
+      logo: "/x.jpg",
     },
     bluesky: {
       link: "https://bsky.app/profile/",
-      logo: "",
+      logo: "/bsky.jpg",
     },
     mastodon: {
       link: "test/",
@@ -50,7 +50,7 @@ export default function Container(props: {
           </CardDescription>
         </CardHeader>
 
-        <section className="ml-[-104px] flex flex-col sm:ml-0 sm:mt-auto sm:h-full">
+        <div className="ml-[-104px] flex flex-col sm:ml-0 sm:mt-auto sm:h-full">
           <p className="relative my-8 sm:my-auto">
             <span className="top-[-16px] ml-[-24px]">“</span>
             {props.quote}
@@ -64,15 +64,21 @@ export default function Container(props: {
                     key={index}
                     href={socials[key] + value}
                     target="_blank"
-                    className="flex flex-row gap-2"
+                    className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
                   >
-                    <Image src="" width={25} height={25} alt={`${key} logo`} />
+                    <Image
+                      src={socials[key].logo}
+                      width={25}
+                      height={25}
+                      alt={`${key} logo`}
+                      className="rounded-sm"
+                    />
                     {value}
                   </Link>
                 );
               })}
           </CardFooter>
-        </section>
+        </div>
       </CardContent>
     </Card>
   );

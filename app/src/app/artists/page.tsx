@@ -1,6 +1,6 @@
 import Container from "@/components/user_card";
 
-export default function Team() {
+export default function Artists() {
   const test = [
     {
       name: "Hunter",
@@ -22,10 +22,7 @@ export default function Team() {
     },
   ];
   return (
-    <section
-      id="artists"
-      className="mt-[60vh] flex h-screen flex-col items-center justify-center"
-    >
+    <section id="artists" className="mt-96 h-screen flex-col">
       {test.map((artist, index) => (
         <Container key={index} {...artist} />
       ))}

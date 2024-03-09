@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 
 export default function Transition() {
   const { scrollYProgress } = useScroll();
@@ -11,7 +10,10 @@ export default function Transition() {
   const shift_text = useTransform(scrollYProgress, [0.15, 0.6], [0, -1000]);
 
   return (
-    <section className="transform items-center justify-center overflow-x-hidden">
+    <section
+      id="transition"
+      className="mb-56 w-screen transform overflow-x-hidden"
+    >
       <div>
         <motion.div
           style={{
@@ -30,15 +32,14 @@ export default function Transition() {
             translateY: shift_text,
           }}
           className="mx-6 will-change-transform"
-          id="info"
         >
-          <section className="mx-auto mb-96 flex w-fit justify-center rounded-sm bg-primary-950/50 p-8 text-3xl leading-8 sm:text-4xl">
+          <article className="mx-auto mb-[80vh] flex w-fit justify-center rounded-sm bg-primary-950/50 p-8 text-3xl leading-8 sm:text-4xl">
             <h1 className="my-auto [text-shadow:_0_0_5px_rgb(0_0_0_/_100%)]">
-              <span className="top-2 ml-[-24px]">“</span>
+              <span className="top-4 ml-[-22px]">“</span>
               Ready to bring out your gear?
-              <span className="bottom-[-1rem] ml-1">”</span>
+              <span className="bottom-[-0.5rem] ml-0">”</span>
             </h1>
-          </section>
+          </article>
         </motion.div>
       </div>
     </section>

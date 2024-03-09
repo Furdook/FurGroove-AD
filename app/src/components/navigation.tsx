@@ -34,12 +34,12 @@ const menuItems = [
     link: "#contact",
   },
 ];
-const handleMenuOpen = () => {
+const handleMenuOpen = (state?: boolean) => {
   const menu = document.getElementById("menu")!;
   const stripes = document.querySelectorAll(".stripe");
   const body = document.querySelector("body")!;
 
-  if (menu.classList.contains("hidden")) {
+  if (menu.classList.contains("hidden") && state !== false) {
     menu.classList.remove("hidden", "mr-6");
     menu.classList.add("flex", "bg-primary-900", "pr-6");
 
@@ -64,6 +64,7 @@ export default function Navigation() {
   if (typeof window !== "undefined") {
     window.onresize = () => {
       setIsReady(window.innerWidth < 1024);
+      handleMenuOpen(false);
       document.getElementById("menu")!.classList.remove("pr-6");
     };
 
@@ -83,7 +84,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav id="nav" className="fixed z-10 w-screen">
+    <nav id="nav" className="fixed z-20 w-screen">
       {isReady ? hamburger() : null}
       <ul
         id="menu"
@@ -91,7 +92,7 @@ export default function Navigation() {
       >
         {menuItems.map((item, index) => {
           return (
-            <li key={index} className="text-2x lg:text-xl">
+            <li key={index} className="text-2xl lg:text-xl">
               <Link
                 href={item.link}
                 className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
@@ -129,7 +130,7 @@ const hamburger = () => {
         id="burger__input"
         type="checkbox"
         className="hidden"
-        onClick={handleMenuOpen}
+        onClick={() => handleMenuOpen()}
       />
       <div id="burger" className="flex flex-col gap-2">
         <div className="stripe h-1 w-12 rounded-sm bg-accent-400 group-hover:bg-accent-500"></div>

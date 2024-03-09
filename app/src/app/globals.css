@@ -22,8 +22,18 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+/* in use for quote icons  */
 span {
   position: absolute;
   color: #5b89ea;
   font-size: 3rem;
+}
+
+section:not(#transition) {
+  display: flex;
+  max-width: 896px;
+  margin-inline: auto;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
