@@ -23,7 +23,7 @@ const menuItems = [
   },
   {
     title: "Terms of Service",
-    link: "/tos",
+    link: "#tos",
   },
   {
     title: "Team",
@@ -31,7 +31,7 @@ const menuItems = [
   },
   {
     title: "Contact",
-    link: "#contact",
+    link: "#footer",
   },
 ];
 const handleMenuOpen = (state?: boolean) => {

@@ -33,11 +33,9 @@ export default function Container(props: {
 
   return (
     <Card className="my-16 flex w-screen max-w-4xl flex-row px-16 sm:px-6">
-      <Image
+      <img
         src={props.image}
         alt={`${props.name}'s picture`}
-        width={200}
-        height={200}
         className="mr-6 h-20 w-20 rounded-sm border-2 border-accent-500 sm:mr-10 sm:h-52 sm:w-52"
       />
       <CardContent className="my-2 flex w-full flex-col sm:my-4">
@@ -66,12 +64,10 @@ export default function Container(props: {
                     target="_blank"
                     className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
                   >
-                    <Image
+                    <img
                       src={socials[key].logo}
-                      width={25}
-                      height={25}
                       alt={`${key} logo`}
-                      className="rounded-sm"
+                      className="max-h-6 rounded-sm"
                     />
                     {value}
                   </Link>

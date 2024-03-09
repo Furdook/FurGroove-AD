@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Card, CardContent, CardTitle } from "./ui/card";
-import Image from "next/image";
 
 const footerItems = [
   {
@@ -27,22 +26,20 @@ const footerItems = [
 
 export default function Footer() {
   return (
-    <footer className="m-2 mt-56 rounded-md bg-primary-800 p-6">
+    <footer id="footer" className="m-2 mt-56 rounded-md bg-primary-800 p-6">
       <Card className="mx-auto flex max-w-4xl flex-col gap-6 sm:flex-row">
         <Link href="../" className="transition hover:scale-110">
-          <Image
+          <img
             src="/logo_smol.webp"
             alt="Event logo"
-            width={128}
-            height={128}
-            className="hidden rounded-sm md:block"
-          ></Image>
+            className="hidden h-32 w-32 rounded-sm md:block"
+          />
         </Link>
         <CardContent className="flex flex-col">
           <ul className="my-auto">
             {footerItems.map((item, index) => {
               return (
-                <li className="text-accent-300/60 ">
+                <li key={index} className="text-accent-300/60 ">
                   <Link
                     href={item.link}
                     className="decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
@@ -61,13 +58,7 @@ export default function Footer() {
             target="_blank"
             className="flex flex-row gap-2 text-accent-300/60  decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
           >
-            <Image
-              src="/x.jpg"
-              width={25}
-              height={25}
-              alt={`x logo`}
-              className="rounded-sm"
-            />
+            <img src="/x.jpg" alt={`x logo`} className="h-5 w-6 rounded-sm" />
             FurGroove
           </Link>
           <Link
@@ -76,12 +67,10 @@ export default function Footer() {
             target="_blank"
             className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
           >
-            <Image
+            <img
               src="/bsky.jpg"
-              width={25}
-              height={25}
               alt={`x logo`}
-              className="rounded-sm"
+              className="h-5 w-6 rounded-sm "
             />
             furgroove.bsky.social
           </Link>

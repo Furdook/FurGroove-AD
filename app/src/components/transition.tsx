@@ -7,7 +7,7 @@ export default function Transition() {
 
   const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.6]);
   const shift = useTransform(scrollYProgress, [0.15, 0.8], [0, 1000]);
-  const shift_text = useTransform(scrollYProgress, [0.15, 0.6], [0, -1000]);
+  const shift_text = useTransform(scrollYProgress, [0, 0.3], [0, -1000]);
 
   return (
     <section

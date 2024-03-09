@@ -6,12 +6,10 @@ export default function Information() {
       id="info"
       className="flex-col px-6 lg:w-screen lg:flex-row lg:px-0"
     >
-      <Image
+      <img
         src="/djboy.webp"
-        height={400}
-        width={400}
         alt="Beatbird performing at FurGroove 1!"
-        className="w-full rounded-sm shadow-lg"
+        className="h-96 w-96 w-full rounded-sm shadow-lg"
       />
       <p className="my-auto leading-8">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat in
