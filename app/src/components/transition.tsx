@@ -2,12 +2,19 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
+/**
+ * Transition section between landing section and information section.
+ * Gives a parallax effect to the background image and a quote on scroll.
+ *
+ * @returns A section with a background image and a quote
+ */
 export default function Transition() {
+  // Framer Motion animation constants and hooks
   const { scrollYProgress } = useScroll();
 
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.6]);
-  const shift = useTransform(scrollYProgress, [0.15, 0.8], [0, 1000]);
-  const shift_text = useTransform(scrollYProgress, [0, 0.3], [0, -1000]);
+  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.6]); // scaling of the background image on scroll
+  const shift = useTransform(scrollYProgress, [0.15, 0.8], [0, 1000]); // shifting of the background image on scroll
+  const shift_text = useTransform(scrollYProgress, [0, 0.3], [0, -1000]); // shifting of the quote on scroll (oppsite direction)
 
   return (
     <section

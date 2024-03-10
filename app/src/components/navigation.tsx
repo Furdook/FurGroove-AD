@@ -1,39 +1,15 @@
 "use client";
 
 import Link from "next/link";
-
 import { useLayoutEffect, useState } from "react";
+import { navigation } from "@/constants";
 
-const menuItems = [
-  {
-    title: "Information",
-    link: "#info",
-  },
-  {
-    title: "Location",
-    link: "#location",
-  },
-  {
-    title: "Tickets",
-    link: "#tickets",
-  },
-  {
-    title: "Artists",
-    link: "#artists",
-  },
-  {
-    title: "Terms of Service",
-    link: "#tos",
-  },
-  {
-    title: "Team",
-    link: "/team",
-  },
-  {
-    title: "Contact",
-    link: "#footer",
-  },
-];
+/**
+ * Handle the opening and closing of the menu, and the changing of the hamburger icon.
+ * Closes menu on resize to prevent issues reagrding the stye changes.
+ *
+ * @param state - A boolean value to determine if the menu should be open or closed
+ */
 const handleMenuOpen = (state?: boolean) => {
   const menu = document.getElementById("menu")!;
   const stripes = document.querySelectorAll(".stripe");
@@ -61,6 +37,9 @@ const handleMenuOpen = (state?: boolean) => {
 export default function Navigation() {
   const [isReady, setIsReady] = useState(false);
 
+  /**
+   * Adds event listeners to the window object to handle the resizing of the window and the scrolling of the page
+   */
   if (typeof window !== "undefined") {
     window.onresize = () => {
       setIsReady(window.innerWidth < 1024);
@@ -70,8 +49,11 @@ export default function Navigation() {
 
     window.onscroll = () => {
       const menu = document.getElementById("nav")!;
-
-      if (window.scrollY > 1200 && window.scrollY < 3000) {
+      if (
+        window.scrollY > 1200 &&
+        window.scrollY < 2500 &&
+        window.location.pathname === "/"
+      ) {
         menu.style.backgroundColor = "rgba(19, 19, 22, 0.8)";
       } else {
         menu.style.backgroundColor = "#131316";
@@ -85,37 +67,53 @@ export default function Navigation() {
 
   return (
     <nav id="nav" className="fixed z-20 w-screen">
-      {isReady ? hamburger() : null}
+      {
+        /**
+         * Checks if the screen is too small to fit navigation menu, then update to display a hamburger menu icon
+         */
+        isReady ? hamburger() : null
+      }
       <ul
         id="menu"
         className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-4"
       >
-        {menuItems.map((item, index) => {
-          return (
-            <li key={index} className="text-2xl lg:text-xl">
-              <Link
-                href={item.link}
-                className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
-                onClick={() => {
-                  isReady ? handleMenuOpen() : null;
+        {
+          /**
+           * Renders a list of links to the different pages of the website
+           * Most navigating to hash links in the current page
+           */
+          navigation.map((item, index) => {
+            return (
+              <li key={index} className="text-2xl lg:text-xl">
+                <Link
+                  href={item.link}
+                  className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
+                  onClick={() => {
+                    isReady ? handleMenuOpen() : null;
 
-                  const menuItem = document.querySelectorAll("li");
-                  menuItem.forEach((item) => {
-                    item.removeAttribute("aria-selected");
-                  });
-                  menuItem[index].setAttribute("aria-selected", "true");
-                }}
-              >
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
+                    const menuItem = document.querySelectorAll("li");
+                    menuItem.forEach((item) => {
+                      item.removeAttribute("aria-selected");
+                    });
+                    menuItem[index].setAttribute("aria-selected", "true");
+                  }}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })
+        }
       </ul>
     </nav>
   );
 }
 
+/**
+ * A hamburger menu icon with animation styling applied.
+ *
+ * @returns A clickable hamburger menu icon
+ */
 const hamburger = () => {
   return (
     <label

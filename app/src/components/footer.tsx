@@ -41,18 +41,23 @@ export default function Footer() {
           </Link>
           <CardContent className="flex flex-col">
             <ul className="my-auto">
-              {footerItems.map((item, index) => {
-                return (
-                  <li key={index} className="text-accent-300/60 ">
-                    <Link
-                      href={item.link}
-                      className="decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                );
-              })}
+              {
+                /**
+                 * Renders a list of links to the different pages of the website
+                 */
+                footerItems.map((item, index) => {
+                  return (
+                    <li key={index} className="text-accent-300/60 ">
+                      <Link
+                        href={item.link}
+                        className="decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  );
+                })
+              }
             </ul>
           </CardContent>
         </div>

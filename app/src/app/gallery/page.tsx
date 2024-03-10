@@ -1,33 +1,5 @@
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
-
-const galleryItems = [
-  {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/mai.jpeg",
-  },
-  {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/hunter.jpg",
-  },
-  {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/test.webp",
-  },
-  {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/hunter.jpg",
-  },
-  {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/hunter.jpg",
-  },
-];
+import { gallery } from "@/constants";
 
 export default function Gallery() {
   return (
@@ -36,24 +8,31 @@ export default function Gallery() {
         Gallery
       </h1>
       <section className="mt-24 flex-wrap">
-        {galleryItems.map((item, index) => {
-          return (
-            <Card
-              key={index}
-              className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4"
-            >
-              <img
-                src={item.image}
-                alt=""
-                className="aspect-square w-full rounded-sm"
-              />
-              <CardTitle className="pl-2 pt-2 text-xl">{item.title}</CardTitle>
-              <CardDescription className="text-md pl-2 opacity-50">
-                Created by {item.createdBy}
-              </CardDescription>
-            </Card>
-          );
-        })}
+        {
+          /**
+           * Renders a grid of cards with an image, a title, a created by credit and the artist's social media account
+           * */
+          gallery.map((item, index) => {
+            return (
+              <Card
+                key={index}
+                className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4"
+              >
+                <img
+                  src={item.image}
+                  alt=""
+                  className="aspect-square w-full rounded-sm"
+                />
+                <CardTitle className="pl-2 pt-2 text-xl">
+                  {item.title}
+                </CardTitle>
+                <CardDescription className="text-md pl-2 opacity-50">
+                  Created by {item.createdBy}
+                </CardDescription>
+              </Card>
+            );
+          })
+        }
       </section>
     </main>
   );

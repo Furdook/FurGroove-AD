@@ -7,8 +7,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import Image from "next/image";
+import { socials } from "@/constants";
 
+/**
+ * Renders a card with an image, a name, a quote, a position / genre, and social media accounts.
+ *
+ * @param props a user object with a name, quote, position, image url, and socials
+ * @returns a Card component dislaying the user's information in the website style
+ */
 export default function Container(props: {
   name: string;
   quote: string;
@@ -16,21 +22,6 @@ export default function Container(props: {
   image: string;
   socials: Object | null;
 }) {
-  const socials: { [key: string]: { link: string; logo: string } } = {
-    twitter: {
-      link: "https://twitter.com/",
-      logo: "/x.jpg",
-    },
-    bluesky: {
-      link: "https://bsky.app/profile/",
-      logo: "/bsky.jpg",
-    },
-    mastodon: {
-      link: "test/",
-      logo: "",
-    },
-  };
-
   return (
     <Card className="my-16 flex w-screen max-w-4xl flex-row px-16 sm:px-6">
       <img
@@ -55,24 +46,29 @@ export default function Container(props: {
             <span className="bottom-[-44px] ml-1">”</span>
           </p>
           <CardFooter className=" flex flex-row gap-6">
-            {props.socials &&
-              Object.entries(props.socials).map(([key, value], index) => {
-                return (
-                  <Link
-                    key={index}
-                    href={socials[key] + value}
-                    target="_blank"
-                    className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
-                  >
-                    <img
-                      src={socials[key].logo}
-                      alt={`${key} logo`}
-                      className="max-h-6 rounded-sm"
-                    />
-                    {value}
-                  </Link>
-                );
-              })}
+            {
+              /**
+               * If a user's socials is not null, render up to two social media account links on the card
+               */
+              props.socials &&
+                Object.entries(props.socials).map(([key, value], index) => {
+                  return (
+                    <Link
+                      key={index}
+                      href={socials[key] + value}
+                      target="_blank"
+                      className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
+                    >
+                      <img
+                        src={socials[key].logo}
+                        alt={`${key} logo`}
+                        className="max-h-6 rounded-sm"
+                      />
+                      {value}
+                    </Link>
+                  );
+                })
+            }
           </CardFooter>
         </div>
       </CardContent>
