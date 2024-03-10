@@ -1,10 +1,9 @@
 import Artists from "./artists/page";
 import Transition from "../components/transition";
-
-import Image from "next/image";
 import Information from "./information/page";
 import Location from "./location/page";
 import TOS from "./tos/page";
+import Tickets from "./tickets/page";
 
 export default function Home() {
   return (
@@ -17,6 +16,7 @@ export default function Home() {
       <Information />
       <Location />
       <Artists />
+      <Tickets />
       <TOS />
     </main>
   );

@@ -37,3 +37,48 @@ section:not(#transition) {
   justify-content: center;
   align-items: center;
 }
+
+#ticket {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#ticket::before,
+#ticket::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2vw;
+  background: radial-gradient(circle, var(--background) 50%, transparent 50%);
+  background-size: 10%;
+}
+
+#ticket::before {
+  top: -1vw;
+}
+
+#ticket::after {
+  bottom: -1vw;
+}
+
+#ticket-seperator::before,
+#ticket-seperator::after {
+  content: "";
+  position: absolute;
+  height: 5vw;
+  width: 5vw;
+  border-radius: 50%;
+  background: var(--background);
+  background-size: 10%;
+  top: -2.5vw;
+}
+
+#ticket-seperator::before {
+  left: -2.5vw;
+}
+
+#ticket-seperator::after {
+  right: -2.5vw;
+}
