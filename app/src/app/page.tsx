@@ -15,8 +15,8 @@ export default function Home() {
       <Transition />
       <Information />
       <Location />
-      <Artists />
       <Tickets />
+      <Artists />
       <TOS />
     </main>
   );

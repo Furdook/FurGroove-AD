@@ -29,6 +29,27 @@ const navigation = [
   },
 ];
 
+const tickets = [
+  {
+    type: "Early Bird",
+    colour: "bg-primary-600",
+    price: "€ 15,-",
+    size: "w-[100%]",
+  },
+  {
+    type: "Standard",
+    colour: "bg-primary-700",
+    price: "€ 20,-",
+    size: "w-[80%]",
+  },
+  {
+    type: "Late Bird",
+    colour: "bg-primary-800",
+    price: "€ 25,-",
+    size: "w-[60%]",
+  },
+];
+
 const socials: { [key: string]: { link: string; logo: string } } = {
   twitter: {
     link: "https://twitter.com/",
@@ -166,4 +187,4 @@ const tos = [
   },
 ];
 
-export { tos, gallery, team, artists, navigation, socials };
+export { tos, gallery, team, artists, navigation, socials, tickets };

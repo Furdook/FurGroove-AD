@@ -30,7 +30,7 @@ export default function Transition() {
         >
           <img
             src="/test.webp"
-            className="my-56 h-screen object-cover will-change-transform"
+            className="mx-auto my-56 h-screen object-cover"
             alt="Crowd picture from FurGroove 1.0"
           />
         </motion.div>
@@ -38,7 +38,7 @@ export default function Transition() {
           style={{
             translateY: shift_text,
           }}
-          className="mx-6 will-change-transform"
+          className="mx-6"
         >
           <article className="mx-auto mb-[80vh] flex w-fit justify-center rounded-sm bg-primary-950/50 p-8 text-3xl leading-8 sm:text-4xl">
             <h1 className="my-auto [text-shadow:_0_0_5px_rgb(0_0_0_/_100%)]">

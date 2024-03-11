@@ -45,7 +45,7 @@ export default function Container(props: {
             {props.quote}
             <span className="bottom-[-44px] ml-1">”</span>
           </p>
-          <CardFooter className=" flex flex-row gap-6">
+          <CardFooter className="flex flex-row flex-wrap gap-6">
             {
               /**
                * If a user's socials is not null, render up to two social media account links on the card

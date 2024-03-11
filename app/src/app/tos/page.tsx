@@ -17,7 +17,7 @@ const tosItems = [
 
 export default function TOS() {
   return (
-    <section id="tos" className="h-screen w-full px-6 pt-24 lg:px-0">
+    <section id="tos" className="h-screen w-full px-6 py-24 lg:px-0">
       <Accordion
         type="single"
         collapsible

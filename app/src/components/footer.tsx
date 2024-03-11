@@ -64,22 +64,22 @@ export default function Footer() {
         <CardContent className="mt-auto flex flex-row gap-6 sm:ml-auto">
           <Link
             key="twitter"
-            href="https://twitter.com/"
+            href="https://twitter.com/furgrooveNL"
             target="_blank"
             className="flex flex-row gap-2 text-accent-300/60  decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
           >
-            <img src="/x.jpg" alt={`x logo`} className="h-6 w-6 rounded-sm" />
-            FurGroove
+            <img src="/x.jpg" alt="x logo" className="h-6 w-6 rounded-sm" />
+            FurGrooveNL
           </Link>
           <Link
-            key="twitter"
-            href="https://twitter.com/"
+            key="bluesky"
+            href="https://bsky.app/profile/furgroove.bsky.social"
             target="_blank"
             className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
           >
             <img
               src="/bsky.jpg"
-              alt={`x logo`}
+              alt="Bluesky logo"
               className="h-6 w-6 rounded-sm "
             />
             furgroove.bsky.social
