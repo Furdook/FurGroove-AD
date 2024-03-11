@@ -1,13 +1,12 @@
+import PageTitle from "@/components/page_title";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { gallery } from "@/constants";
 
 export default function Gallery() {
   return (
-    <main className="mx-auto flex h-screen max-w-4xl px-6 pt-6 lg:w-screen lg:px-0">
-      <h1 className="fixed top-[-1.5rem] z-10 w-full bg-primary-900 pb-2 pt-10 text-2xl lg:top-10 lg:pt-4">
-        Gallery
-      </h1>
-      <section className="mt-24 flex-wrap">
+    <main className="mx-auto flex max-w-4xl lg:w-screen">
+      <PageTitle title="Gallery" />
+      <section className="mt-24 flex-wrap px-6 pt-6 lg:px-0">
         {
           /**
            * Renders a grid of cards with an image, a title, a created by credit and the artist's social media account
@@ -16,7 +15,7 @@ export default function Gallery() {
             return (
               <Card
                 key={index}
-                className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4"
+                className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4 gap-6"
               >
                 <img
                   src={item.image}

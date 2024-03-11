@@ -40,11 +40,11 @@ export default function Transition() {
           }}
           className="mx-6"
         >
-          <article className="mx-auto mb-[80vh] flex w-fit justify-center rounded-sm bg-primary-950/50 p-8 text-3xl leading-8 sm:text-4xl">
-            <h1 className="my-auto [text-shadow:_0_0_5px_rgb(0_0_0_/_100%)]">
-              <span className="top-4 ml-[-22px]">“</span>
+          <article className="mx-auto mb-[80vh] flex w-fit justify-center rounded-sm bg-primary-950/50 p-8 text-3xl leading-8 max-[550px]:text-lg sm:text-4xl">
+            <h1 className="[text-shadow:_0_0_5px_rgb(0_0_0_/_100%) relative my-auto">
+              <span className="absolute left-[-1rem] top-[-1rem]">“</span>
               Ready to bring out your gear?
-              <span className="bottom-[-0.5rem] ml-0">”</span>
+              <span className="absolute bottom-[-2rem]">”</span>
             </h1>
           </article>
         </motion.div>

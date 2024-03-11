@@ -14,13 +14,15 @@ export default function Tickets() {
             <Card
               key={index}
               id="ticket"
-              className={`${ticket.colour} flex aspect-[1/2] w-4/12 flex-col text-center align-middle`}
+              className={`${ticket.type === "Early Bird" ? "bg-primary-600" : ticket.type === "Standard" ? "bg-primary-700" : "bg-primary-800"} flex aspect-[1/2] w-4/12 flex-col text-center align-middle`}
             >
-              <CardTitle className="pt-12 lg:text-3xl">{ticket.type}</CardTitle>
-              <CardContent className="text-xl text-accent-300/50 ">
+              <CardTitle className="text-md pt-4 sm:pt-12 sm:text-2xl lg:text-3xl">
+                {ticket.type}
+              </CardTitle>
+              <CardContent className="text-sm text-accent-300/50 sm:text-xl ">
                 Ticket
               </CardContent>
-              <CardContent className="mt-[-2rem] pt-[25%] text-2xl text-accent-400 sm:text-4xl md:mt-0">
+              <CardContent className="mt-[-2rem] pt-8 text-xl text-accent-400 sm:pt-[25%] sm:text-4xl md:mt-0">
                 {ticket.price}
               </CardContent>
               <div

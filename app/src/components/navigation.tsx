@@ -51,7 +51,7 @@ export default function Navigation() {
       const menu = document.getElementById("nav")!;
       // Makes the navigation background less opaque when positioned over the transition image, does not apply on other pages than "/"
       if (
-        window.scrollY > 1200 &&
+        window.scrollY > 1100 &&
         window.scrollY < 2500 &&
         window.location.pathname === "/"
       ) {

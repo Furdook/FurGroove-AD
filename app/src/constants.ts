@@ -1,23 +1,23 @@
 const navigation = [
   {
     title: "Information",
-    link: "#info",
+    link: "../#info",
   },
   {
     title: "Location",
-    link: "#location",
+    link: "../#location",
   },
   {
     title: "Tickets",
-    link: "#tickets",
+    link: "../#tickets",
   },
   {
     title: "Artists",
-    link: "#artists",
+    link: "../#artists",
   },
   {
     title: "Terms of Service",
-    link: "#tos",
+    link: "../#tos",
   },
   {
     title: "Team",
