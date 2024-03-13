@@ -1,3 +1,12 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ArrowBigRight, MoveRight } from "lucide-react";
+
 export default function Information() {
   return (
     <section
@@ -9,17 +18,41 @@ export default function Information() {
         alt="Beatbird performing at FurGroove 1!"
         className="aspect-square w-full rounded-sm shadow-lg lg:max-w-96"
       />
-      <p className="my-auto leading-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat in
-        repudiandae incidunt mollitia maxime, error recusandae possimus delectus
-        optio doloribus, vitae molestias temporibus nemo eos nisi accusamus aut
-        quam facilis deleniti ut beatae enim dignissimos dolore animi. Aliquid
-        tempore dolorum laboriosam consectetur, sequi numquam natus cum rem illo
-        nulla neque incidunt excepturi ipsum porro, tenetur saepe minus,
-        perferendis non molestiae culpa placeat quaerat vel odit asperiores.
-        Voluptate minima sequi nesciunt molestiae numquam facilis aliquam,
-        delectus, itaque iste in velit rerum.
-      </p>
+      <article>
+        <p className="my-auto leading-8">
+          Come join us to a place where you can be yourself! FurGroove AD
+          edition welcomes not only furries but also puppies, gearheads and
+          everyone with an open mind. Together with{" "}
+          <strong className="underline decoration-accent-500 decoration-2">
+            Fort33
+          </strong>{" "}
+          we want to celebrate life and have an awesome tailwagging night with
+          purrfect DJ's and atmosphere!
+        </p>
+        <Card className="mt-6 flex w-full flex-row rounded-md bg-primary-800 px-4 py-2 ">
+          <CardContent className="flex flex-col">
+            <CardTitle className="m text-accent-400">November</CardTitle>
+            <CardTitle className="text-4xl">
+              12<strong className="text-2xl font-normal opacity-50">TH</strong>
+            </CardTitle>
+            <hr className="my-2 w-full border-accent-400" />
+            <CardDescription>20:00</CardDescription>
+          </CardContent>
+          <MoveRight
+            className="mx-auto my-auto flex-grow text-accent-400"
+            size={64}
+            strokeWidth={1}
+          ></MoveRight>
+          <CardContent className="ml-auto flex flex-col text-right">
+            <CardTitle className="text-accent-400">November</CardTitle>
+            <CardTitle className="text-4xl ">
+              13<strong className="text-2xl font-normal opacity-50">TH</strong>
+            </CardTitle>
+            <hr className="my-2 w-full border-accent-400" />
+            <CardDescription>02:00</CardDescription>
+          </CardContent>
+        </Card>
+      </article>
     </section>
   );
 }
