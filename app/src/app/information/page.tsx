@@ -11,7 +11,7 @@ export default function Information() {
   return (
     <section
       id="info"
-      className="flex-col px-6 lg:w-screen lg:flex-row lg:px-0"
+      className="h-screen flex-col px-6 lg:w-screen lg:flex-row lg:px-0"
     >
       <img
         src="/djboy.webp"
@@ -20,14 +20,14 @@ export default function Information() {
       />
       <article>
         <p className="my-auto leading-8">
-          {`Come join us to a place where you can be yourself! FurGroove AD
+          Come join us to a place where you can be yourself! FurGroove AD
           edition welcomes not only furries but also puppies, gearheads and
           everyone with an open mind. Together with{" "}
           <strong className="underline decoration-accent-500 decoration-2">
             Fort33
           </strong>{" "}
           we want to celebrate life and have an awesome tailwagging night with
-          purrfect DJ's and atmosphere!`}
+          purrfect DJ's and atmosphere!
         </p>
         <Card className="mt-6 flex w-full flex-row rounded-md bg-primary-800 px-4 py-2 ">
           <CardContent className="flex flex-col">

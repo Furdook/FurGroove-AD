@@ -76,7 +76,7 @@ export default function Navigation() {
       }
       <ul
         id="menu"
-        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-4"
+        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-2"
       >
         {
           /**

@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -109,4 +113,8 @@ section:not(#transition) {
 .DialogOverlay[data-state="closed"],
 .DialogContent[data-state="closed"] {
   animation: fadeOut 200ms ease-in;
+}
+
+.stripe {
+  box-shadow: 2px 2px 5px #131316;
 }

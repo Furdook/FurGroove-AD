@@ -2,7 +2,7 @@ export default function Location() {
   return (
     <section
       id="location"
-      className="mb-56 mt-96 flex-col gap-6  px-6 lg:w-screen lg:px-0"
+      className="mb-56 mt-96 h-screen flex-col  gap-6 px-6 lg:w-screen lg:px-0"
     >
       <h1 className="ml-0 w-full text-left text-2xl underline decoration-accent-500">
         FORT33 - Leusden

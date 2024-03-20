@@ -17,7 +17,7 @@ const navigation = [
   },
   {
     title: "Terms of Service",
-    link: "../#tos",
+    link: "/tos",
   },
   {
     title: "Team",
@@ -122,9 +122,9 @@ const team = [
 
 const gallery = [
   {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/mai.jpeg",
+    title: "Banner Design",
+    createdBy: "Thlaylii",
+    image: "/banner.webp",
   },
   {
     title: "T-shirt Design",

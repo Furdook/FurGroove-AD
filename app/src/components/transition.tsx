@@ -19,7 +19,7 @@ export default function Transition() {
   return (
     <section
       id="transition"
-      className="mb-24 w-screen transform overflow-x-hidden"
+      className="mb-[-40rem] w-screen transform overflow-x-hidden"
     >
       <div>
         <motion.div

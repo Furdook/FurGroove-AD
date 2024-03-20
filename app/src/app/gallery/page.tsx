@@ -10,7 +10,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -22,9 +21,9 @@ import Link from "next/link";
 
 export default function Gallery() {
   return (
-    <main className="mx-auto flex max-w-4xl lg:w-screen">
+    <main className="mx-auto flex max-w-4xl flex-col lg:w-screen">
       <PageTitle title="Gallery" />
-      <section className="mt-24 flex-wrap px-6 pt-6 lg:px-0">
+      <section className="flex-wrap px-6 pt-6 lg:px-0">
         {
           /**
            * Renders a grid of cards with an image, a title, a created by credit and the artist's social media account
@@ -40,7 +39,7 @@ export default function Gallery() {
                     <img
                       src={item.image}
                       alt=""
-                      className="aspect-square w-full rounded-md outline-2 outline-accent-400  group-hover:outline"
+                      className="aspect-square w-full rounded-md object-cover saturate-0 transition-all duration-500 group-hover:saturate-100"
                     />
                     <CardContent className="flex">
                       <CardContent>
@@ -68,17 +67,17 @@ export default function Gallery() {
                     <img
                       src={item.image}
                       alt=""
-                      className="aspect-square w-full rounded-sm"
+                      className="w-full rounded-md"
                     />
                   </DialogHeader>
                   <DialogFooter>
-                    <Link href={""} className="flex gap-2">
+                    <Link href="" className="flex gap-2">
                       <img
                         src="/x.jpg"
                         className="my-auto h-6 w-6 rounded-sm"
                       />
                       <h3 className="my-auto text-lg text-accent-300/80 decoration-accent-500 decoration-2 underline-offset-4 hover:text-accent-300 hover:underline">
-                        @FurGrooveNL
+                        @{item.createdBy}
                       </h3>
                     </Link>
                     <DialogClose asChild className="ml-auto">
