@@ -1,6 +1,24 @@
 import PageTitle from "@/components/page_title";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import { gallery } from "@/constants";
+import Link from "next/link";
 
 export default function Gallery() {
   return (
@@ -13,22 +31,62 @@ export default function Gallery() {
            * */
           gallery.map((item, index) => {
             return (
-              <Card
-                key={index}
-                className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4 gap-6"
-              >
-                <img
-                  src={item.image}
-                  alt=""
-                  className="aspect-square w-full rounded-sm"
-                />
-                <CardTitle className="pl-2 pt-2 text-xl">
-                  {item.title}
-                </CardTitle>
-                <CardDescription className="text-md pl-2 opacity-50">
-                  Created by {item.createdBy}
-                </CardDescription>
-              </Card>
+              <Dialog>
+                <DialogTrigger
+                  key={index}
+                  className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4 gap-6"
+                >
+                  <Card className="group text-left hover:cursor-zoom-in">
+                    <img
+                      src={item.image}
+                      alt=""
+                      className="aspect-square w-full rounded-md outline-2 outline-accent-400  group-hover:outline"
+                    />
+                    <CardContent className="flex">
+                      <CardContent>
+                        <CardTitle className="pl-2 pt-2 text-xl">
+                          {item.title}
+                        </CardTitle>
+                        <CardDescription className="text-md pl-2 opacity-50">
+                          Created by {item.createdBy}
+                        </CardDescription>
+                      </CardContent>
+                      <Link href={""} className="my-auto ml-auto mr-2">
+                        <img
+                          src="/x.jpg"
+                          className="my-auto h-6 w-6 rounded-sm"
+                        />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader className="flex gap-2">
+                    <DialogTitle className="mb-[0.1rem]">
+                      {item.title}
+                    </DialogTitle>
+                    <img
+                      src={item.image}
+                      alt=""
+                      className="aspect-square w-full rounded-sm"
+                    />
+                  </DialogHeader>
+                  <DialogFooter>
+                    <Link href={""} className="flex gap-2">
+                      <img
+                        src="/x.jpg"
+                        className="my-auto h-6 w-6 rounded-sm"
+                      />
+                      <h3 className="my-auto text-lg text-accent-300/80 decoration-accent-500 decoration-2 underline-offset-4 hover:text-accent-300 hover:underline">
+                        @FurGrooveNL
+                      </h3>
+                    </Link>
+                    <DialogClose asChild className="ml-auto">
+                      <Button>Close</Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             );
           })
         }
