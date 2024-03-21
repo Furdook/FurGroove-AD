@@ -18,16 +18,18 @@ export default function Location() {
             <span className="absolute bottom-[-3.5rem]">”</span>
           </p>
         </div>
-        <div className="hidden h-40 w-40 flex-none rounded-md bg-primary-800 sm:block">
-          FORT33 logo
-        </div>
+        <img
+          src="/fort33.png"
+          alt=""
+          className="hidden h-40 saturate-0 transition-all duration-200 hover:saturate-100 sm:block"
+        />
       </div>
 
       <hr className="w-full" />
       <p className="w-full opacity-50">
         Bavoortseweg 25, 3833 BM Leusden, Netherlands
       </p>
-      <div className="h-96 w-full rounded-md bg-primary-800">Location map</div>
+      <img src="map.webp" alt="" className="rounded-sm" />
     </section>
   );
 }
