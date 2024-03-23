@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 import { navigation } from "@/constants";
 
 /**
@@ -17,14 +17,14 @@ const handleMenuOpen = (state?: boolean) => {
 
   if (menu.classList.contains("hidden") && state !== false) {
     menu.classList.remove("hidden", "mr-6");
-    menu.classList.add("flex", "bg-primary-900", "pr-6");
+    menu.classList.add("flex", "pr-6");
 
     stripes.forEach((stripe) => {
       stripe.classList.add("bg-accent-500");
     });
     body.style.overflow = "hidden";
   } else {
-    menu.classList.remove("flex", "bg-primary-900", "pr-6");
+    menu.classList.remove("flex", "pr-6");
     menu.classList.add("hidden", "mr-6");
 
     stripes.forEach((stripe) => {
@@ -35,91 +35,69 @@ const handleMenuOpen = (state?: boolean) => {
 };
 
 export default function Navigation() {
-  const [isReady, setIsReady] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  /**
-   * Adds event listeners to the window object to handle the resizing of the window and the scrolling of the page
-   */
   if (typeof window !== "undefined") {
     window.onresize = () => {
-      setIsReady(window.innerWidth < 1024);
       handleMenuOpen(false);
-      document.getElementById("menu")!.classList.remove("pr-6");
     };
 
     window.onscroll = () => {
-      const menu = document.getElementById("nav")!;
-      // Makes the navigation background less opaque when positioned over the transition image, does not apply on other pages than "/"
+      const nav = document.getElementById("nav")!;
       if (
-        window.scrollY > 1100 &&
-        window.scrollY < 2500 &&
-        window.location.pathname === "/"
+        window.scrollY > scrollPosition &&
+        window.scrollY > 10 &&
+        window.innerWidth > 1024
       ) {
-        menu.style.backgroundColor = "rgba(19, 19, 22, 0.8)";
+        nav.style.transform = "translateY(-100%)";
       } else {
-        menu.style.backgroundColor = "#131316";
+        nav.style.transform = "translateY(0)";
       }
+      setScrollPosition(window.scrollY);
     };
   }
 
-  useLayoutEffect(() => {
-    setIsReady(window.innerWidth < 1024);
-  }, []);
-
   return (
-    <nav id="nav" className="fixed z-20 w-screen">
-      {
-        /**
-         * Checks if the screen is too small to fit navigation menu, then update to display a hamburger menu icon
-         */
-        isReady ? hamburger() : null
-      }
+    <nav
+      id="nav"
+      className="fixed z-20 w-screen bg-primary-900 transition-transform duration-300 lg:bg-primary-900/70 lg:backdrop-blur"
+    >
+      <Hamburger />
       <ul
         id="menu"
         className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-2"
       >
-        {
-          /**
-           * Renders a list of links to the different pages of the website
-           * Most navigating to hash links in the current page
-           */
-          navigation.map((item, index) => {
-            return (
-              <li key={index} className="text-2xl lg:text-xl">
-                <Link
-                  href={item.link}
-                  className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
-                  onClick={() => {
-                    isReady ? handleMenuOpen() : null;
+        {navigation.map((item, index) => {
+          return (
+            <li key={index} className="text-2xl lg:text-xl">
+              <Link
+                href={item.link}
+                className="text-accent-400 decoration-2 underline-offset-4 opacity-75 hover:text-accent-300 hover:underline hover:decoration-accent-500 hover:opacity-100 focus-visible:text-accent-300 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:opacity-100 focus-visible:outline-none focus-visible:transition-none"
+                onClick={() => {
+                  handleMenuOpen(false);
 
-                    const menuItem = document.querySelectorAll("li");
-                    menuItem.forEach((item) => {
-                      item.removeAttribute("aria-selected");
-                    });
-                    menuItem[index].setAttribute("aria-selected", "true");
-                  }}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            );
-          })
-        }
+                  const menuItem = document.querySelectorAll("li");
+                  menuItem.forEach((item) => {
+                    item.removeAttribute("aria-selected");
+                  });
+                  menuItem[index].setAttribute("aria-selected", "true");
+                }}
+              >
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
 }
 
-/**
- * A hamburger menu icon with animation styling applied.
- *
- * @returns A clickable hamburger menu icon
- */
-const hamburger = () => {
+const Hamburger = () => {
   return (
     <label
       htmlFor="burger__input"
-      className="group fixed right-6 top-4 hover:cursor-pointer"
+      className="group fixed right-6 top-4 hover:cursor-pointer lg:hidden"
       tabIndex={0}
       onKeyDown={(e) => {
         e.key === "Enter" && handleMenuOpen();

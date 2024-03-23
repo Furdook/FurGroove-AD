@@ -80,7 +80,7 @@ export default function Footer() {
             <img
               src="/bsky.jpg"
               alt="Bluesky logo"
-              className="h-6 w-6 rounded-sm "
+              className="h-6 w-6 rounded-sm"
             />
             furgroove.bsky.social
           </Link>

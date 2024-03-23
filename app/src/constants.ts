@@ -81,7 +81,7 @@ const team = [
     name: "Hunter",
     quote: "Dutch Boy liking big things",
     position: "Event Organiser",
-    image: "/hunter.jpg",
+    image: "/hunter.webp",
     socials: {
       twitter: "HunterHuskyNL",
       bluesky: "hunterhuskynl.bsky.social",
@@ -92,23 +92,7 @@ const team = [
     quote:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
     position: "Web Developer",
-    image: "/mai.jpeg",
-    socials: { twitter: "MoreMaiTai", bluesky: "maitai.social" },
-  },
-  {
-    name: "Jay the Wolf",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
-    position: "Finance",
-    image: "/jay.webp",
-    socials: { twitter: "MoreMaiTai", bluesky: "maitai.social" },
-  },
-  {
-    name: "Archomeda",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
-    position: "Registration",
-    image: "/arch.webp",
+    image: "/mai.webp",
     socials: { twitter: "MoreMaiTai", bluesky: "maitai.social" },
   },
   {
@@ -116,6 +100,22 @@ const team = [
     quote: "Bark bark bark bark bark bark bark bark bark bark bark bark",
     position: "Huisdier",
     image: "/menos.webp",
+    socials: null,
+  },
+  {
+    name: "Jay the Wolf",
+    quote:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
+    position: "Finance",
+    image: "/jay.webp",
+    socials: null,
+  },
+  {
+    name: "Archomeda",
+    quote:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
+    position: "Registration",
+    image: "/arch.webp",
     socials: null,
   },
 ];

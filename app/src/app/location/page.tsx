@@ -29,7 +29,7 @@ export default function Location() {
       <p className="w-full opacity-50">
         Bavoortseweg 25, 3833 BM Leusden, Netherlands
       </p>
-      <img src="map.webp" alt="" className="rounded-sm" />
+      <img src="/map.webp" alt="" className="rounded-sm" />
     </section>
   );
 }

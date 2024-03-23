@@ -24,11 +24,13 @@ export default function Container(props: {
 }) {
   return (
     <Card className="my-16 flex w-screen max-w-4xl flex-row px-8 lg:px-0">
-      <img
-        src={props.image}
-        alt={`${props.name}'s picture`}
-        className="mr-6 h-20 w-20 rounded-sm border-2 border-accent-500 sm:mr-10 sm:h-52 sm:w-52"
-      />
+      <div className="mr-6 aspect-square h-20 w-20 border-2 border-accent-500 sm:mr-10 sm:h-52 sm:w-52">
+        <img
+          src={props.image}
+          alt={`${props.name}'s picture`}
+          className="rounded-sm saturate-0 transition-all duration-500 hover:saturate-100"
+        />
+      </div>
       <CardContent className="my-2 flex w-full flex-col sm:my-4">
         <CardHeader className="flex sm:flex-row">
           <CardTitle className="underline decoration-accent-500 decoration-2 underline-offset-8">
