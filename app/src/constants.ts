@@ -74,6 +74,30 @@ const artists = [
     image: "/menos.webp",
     socials: null,
   },
+  {
+    name: "DJ #2",
+    quote:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    position: "House",
+    image: "/hunter.webp",
+    socials: null,
+  },
+  {
+    name: "DJ #3",
+    quote:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    position: "Club / House",
+    image: "/mai.webp",
+    socials: null,
+  },
+  {
+    name: "DJ #4",
+    quote:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    position: "Pop",
+    image: "/jay.webp",
+    socials: null,
+  },
 ];
 
 const team = [
@@ -122,29 +146,29 @@ const team = [
 
 const gallery = [
   {
-    title: "Banner Design",
-    createdBy: "Thlaylii",
+    title: "Banner Art",
+    createdBy: "@Thlaylii",
     image: "/banner.webp",
   },
   {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/hunter.jpg",
+    title: "Badge Design",
+    createdBy: "@Aviverine",
+    image: "/badge.webp",
   },
   {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/test.webp",
+    title: "Sticker Design",
+    createdBy: "@niveddoesart",
+    image: "/sticker.webp",
   },
   {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/hunter.jpg",
+    title: "Sticker Design 2",
+    createdBy: "@niveddoesart",
+    image: "/sticker2.webp",
   },
   {
-    title: "T-shirt Design",
-    createdBy: "FurGroove",
-    image: "/hunter.jpg",
+    title: "Lanyard Design",
+    createdBy: "@imbluewisp",
+    image: "/lanyard.webp",
   },
 ];
 

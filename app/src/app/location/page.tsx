@@ -2,7 +2,7 @@ export default function Location() {
   return (
     <section
       id="location"
-      className="mb-56 mt-96 h-screen flex-col  gap-6 px-6 lg:w-screen lg:px-0"
+      className="mb-56 mt-96 h-screen flex-col px-6 lg:w-screen lg:px-0"
     >
       <h1 className="ml-0 w-full text-left text-2xl underline decoration-accent-500">
         FORT33 - Leusden
@@ -24,12 +24,17 @@ export default function Location() {
           className="hidden h-40 saturate-0 transition-all duration-200 hover:saturate-100 sm:block"
         />
       </div>
-
       <hr className="w-full" />
-      <p className="w-full opacity-50">
+      <p className="my-[-1rem] w-full opacity-50">
         Bavoortseweg 25, 3833 BM Leusden, Netherlands
       </p>
-      <img src="/map.webp" alt="" className="rounded-sm" />
+      <a
+        href="https://www.google.com/maps/place/Fort33+%7C+Poppodium+%7C+Live+muziek+%7C+Cultuurcentrum/@52.131597,5.4123335,17z/data=!3m1!4b1!4m6!3m5!1s0x47c645ca1aa6c905:0xade2abb0d2d81996!8m2!3d52.1315937!4d5.4149138!16s%2Fg%2F12qg23gbq?entry=ttu"
+        target="_blank"
+        className="cursor-alias rounded-sm outline-2 outline-accent-500 hover:outline"
+      >
+        <img src="/map.webp" alt="" className="rounded-sm" />
+      </a>
     </section>
   );
 }

@@ -30,15 +30,12 @@ export default function Gallery() {
            * */
           gallery.map((item, index) => {
             return (
-              <Dialog>
-                <DialogTrigger
-                  key={index}
-                  className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4 gap-6"
-                >
+              <Dialog key={index}>
+                <DialogTrigger className="relative min-w-56 flex-shrink-0 flex-grow basis-1/4 gap-6">
                   <Card className="group text-left hover:cursor-zoom-in">
                     <img
                       src={item.image}
-                      alt=""
+                      alt={`Picture of the ${item.title}`}
                       className="aspect-square w-full rounded-md object-cover saturate-0 transition-all duration-500 group-hover:saturate-100"
                     />
                     <CardContent className="flex">
@@ -53,6 +50,7 @@ export default function Gallery() {
                       <Link href={""} className="my-auto ml-auto mr-2">
                         <img
                           src="/x.jpg"
+                          alt="Twitter Icon"
                           className="my-auto h-6 w-6 rounded-sm"
                         />
                       </Link>
@@ -66,7 +64,7 @@ export default function Gallery() {
                     </DialogTitle>
                     <img
                       src={item.image}
-                      alt=""
+                      alt={`Picture of the ${item.title}`}
                       className="w-full rounded-md"
                     />
                   </DialogHeader>
@@ -74,6 +72,7 @@ export default function Gallery() {
                     <Link href="" className="flex gap-2">
                       <img
                         src="/x.jpg"
+                        alt="Twitter Icon"
                         className="my-auto h-6 w-6 rounded-sm"
                       />
                       <h3 className="my-auto text-lg text-accent-300/80 decoration-accent-500 decoration-2 underline-offset-4 hover:text-accent-300 hover:underline">
