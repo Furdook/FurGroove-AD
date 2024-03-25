@@ -1,4 +1,3 @@
-import PageTitle from "@/components/page_title";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -22,8 +21,7 @@ import Link from "next/link";
 export default function Gallery() {
   return (
     <main className="mx-auto flex max-w-4xl flex-col lg:w-screen">
-      <PageTitle title="Gallery" />
-      <section className="flex-wrap px-6 pt-6 lg:px-0">
+      <section className="flex-wrap px-6 pt-20 lg:px-0">
         {
           /**
            * Renders a grid of cards with an image, a title, a created by credit and the artist's social media account

@@ -44,14 +44,13 @@ export default function Navigation() {
 
     window.onscroll = () => {
       const nav = document.getElementById("nav")!;
-      if (
-        window.scrollY > scrollPosition &&
-        window.scrollY > 10 &&
-        window.innerWidth > 1024
-      ) {
+      const burger = document.getElementById("burger__container")!;
+      if (window.scrollY > scrollPosition && window.scrollY > 10) {
         nav.style.transform = "translateY(-100%)";
+        burger.style.transform = "translateY(-100%)";
       } else {
         nav.style.transform = "translateY(0)";
+        burger.style.transform = "translateY(0)";
       }
       setScrollPosition(window.scrollY);
     };
@@ -65,7 +64,7 @@ export default function Navigation() {
       <Hamburger />
       <ul
         id="menu"
-        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 text-right tracking-widest lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-2"
+        className="my-auto mr-6 hidden h-screen flex-col justify-center gap-8 text-right tracking-widest  lg:mx-auto lg:mt-0 lg:flex lg:h-12 lg:w-screen lg:max-w-4xl lg:flex-row lg:justify-around lg:pt-2"
       >
         {navigation.map((item, index) => {
           return (
@@ -95,25 +94,31 @@ export default function Navigation() {
 
 const Hamburger = () => {
   return (
-    <label
-      htmlFor="burger__input"
-      className="group fixed right-6 top-4 hover:cursor-pointer lg:hidden"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        e.key === "Enter" && handleMenuOpen();
-      }}
+    <div
+      id="burger__container"
+      className="fixed h-16 w-screen bg-primary-900/70 backdrop-blur transition-transform duration-300 lg:hidden"
     >
-      <input
-        id="burger__input"
-        type="checkbox"
-        className="hidden"
-        onClick={() => handleMenuOpen()}
-      />
-      <div id="burger" className="flex flex-col gap-2">
-        <div className="stripe h-1 w-12 rounded-sm bg-accent-400 group-hover:bg-accent-500"></div>
-        <div className="stripe duration-400 ml-auto h-1 w-10 rounded-sm bg-accent-400 transition-all group-hover:w-12 group-hover:bg-accent-500"></div>
-        <div className="stripe ml-auto h-1 w-8 rounded-sm bg-accent-400 transition-all duration-300 group-hover:w-12 group-hover:bg-accent-500"></div>
-      </div>
-    </label>
+      <img src="/logo.webp" alt="FurGroove logo" className="mx-auto h-14" />
+      <label
+        htmlFor="burger__input"
+        className="group fixed right-6 top-4 hover:cursor-pointer lg:hidden"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleMenuOpen();
+        }}
+      >
+        <input
+          id="burger__input"
+          type="checkbox"
+          className="hidden"
+          onClick={() => handleMenuOpen()}
+        />
+        <div id="burger" className="flex flex-col gap-2">
+          <div className="stripe  h-1 w-12 rounded-sm bg-accent-400 group-hover:bg-accent-500"></div>
+          <div className="stripe duration-400 ml-auto h-1 w-10 rounded-sm bg-accent-400 transition-all group-hover:w-12 group-hover:bg-accent-500"></div>
+          <div className="stripe ml-auto h-1 w-8 rounded-sm bg-accent-400 transition-all duration-300 group-hover:w-12 group-hover:bg-accent-500"></div>
+        </div>
+      </label>
+    </div>
   );
 };

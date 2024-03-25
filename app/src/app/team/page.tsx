@@ -1,11 +1,9 @@
-import PageTitle from "@/components/page_title";
 import Container from "@/components/user_card";
 import { team } from "@/constants";
 
 export default function Team() {
   return (
-    <main className="mx-auto flex max-w-4xl flex-col lg:w-screen">
-      <PageTitle title="Team" />
+    <main className="mx-auto flex max-w-4xl flex-col pt-12 lg:w-screen">
       <section id="team" className="flex-col lg:mt-[-2rem]">
         {
           /**
