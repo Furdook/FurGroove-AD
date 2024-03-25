@@ -4,7 +4,7 @@ export default function Location() {
       id="location"
       className="mb-56 mt-96 h-screen flex-col px-6 lg:w-screen lg:px-0"
     >
-      <h1 className="ml-0 w-full text-left text-2xl underline decoration-accent-500">
+      <h1 className="ml-0 w-full text-left text-2xl underline decoration-accent-500 underline-offset-4">
         FORT33 - Leusden
       </h1>
       <div className="flex flex-row">
@@ -33,7 +33,11 @@ export default function Location() {
         target="_blank"
         className="cursor-alias rounded-sm outline-2 outline-accent-500 hover:outline"
       >
-        <img src="/map.webp" alt="" className="rounded-sm" />
+        <img
+          src="/map.webp"
+          alt=""
+          className="aspect-square rounded-sm object-cover sm:aspect-auto"
+        />
       </a>
     </section>
   );

@@ -54,7 +54,7 @@ export default function TOS() {
           tos.map((item, index) => {
             return (
               <AccordionItem value={index.toString()} key={index}>
-                <AccordionTrigger className="decoration-accent-500 decoration-4 underline-offset-2">
+                <AccordionTrigger className="decoration-accent-500 underline-offset-4">
                   {item.title}
                 </AccordionTrigger>
                 <AccordionContent className="leading-8">

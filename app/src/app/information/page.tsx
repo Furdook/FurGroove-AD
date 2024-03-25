@@ -23,7 +23,7 @@ export default function Information() {
           Come join us to a place where you can be yourself! FurGroove AD
           edition welcomes not only furries but also puppies, gearheads and
           everyone with an open mind. Together with{" "}
-          <strong className="underline decoration-accent-500 decoration-2">
+          <strong className="underline decoration-accent-500 underline-offset-4">
             Fort33
           </strong>{" "}
           we want to celebrate life and have an awesome tailwagging night with

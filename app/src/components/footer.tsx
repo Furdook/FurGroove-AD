@@ -50,7 +50,7 @@ export default function Footer() {
                     <li key={index} className="text-accent-300/60 ">
                       <Link
                         href={item.link}
-                        className="decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
+                        className="underline-offset-4 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
                       >
                         {item.title}
                       </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
             key="twitter"
             href="https://twitter.com/furgrooveNL"
             target="_blank"
-            className="flex flex-row gap-2 text-accent-300/60  decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
+            className="flex flex-row gap-2 text-accent-300/60 underline-offset-4 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none"
           >
             <img src="/x.jpg" alt="x logo" className="h-6 w-6 rounded-sm" />
             FurGrooveNL

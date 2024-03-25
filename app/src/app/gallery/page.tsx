@@ -73,8 +73,8 @@ export default function Gallery() {
                         alt="Twitter Icon"
                         className="my-auto h-6 w-6 rounded-sm"
                       />
-                      <h3 className="my-auto text-lg text-accent-300/80 decoration-accent-500 decoration-2 underline-offset-4 hover:text-accent-300 hover:underline">
-                        @{item.createdBy}
+                      <h3 className="my-auto text-lg text-accent-300/80 decoration-accent-500 underline-offset-4 hover:text-accent-300 hover:underline">
+                        {item.createdBy}
                       </h3>
                     </Link>
                     <DialogClose asChild className="ml-auto">

@@ -33,7 +33,7 @@ export default function Container(props: {
       </div>
       <CardContent className="my-2 flex w-full flex-col sm:my-4">
         <CardHeader className="flex sm:flex-row">
-          <CardTitle className="underline decoration-accent-500 decoration-2 underline-offset-8">
+          <CardTitle className="underline decoration-accent-500 underline-offset-8">
             {props.name}
           </CardTitle>
           <CardDescription className="mt-1 text-xl text-accent-400 sm:ml-auto sm:mt-0 sm:text-2xl">
@@ -59,7 +59,7 @@ export default function Container(props: {
                       key={index}
                       href={socials[key] + value}
                       target="_blank"
-                      className="flex flex-row gap-2 text-accent-300/60 decoration-2 underline-offset-2 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
+                      className="flex flex-row gap-2 text-accent-300/60 underline-offset-4 hover:text-accent-300 hover:underline hover:decoration-accent-500 focus-visible:text-accent-500 focus-visible:underline focus-visible:decoration-accent-500 focus-visible:outline-none "
                     >
                       <img
                         src={socials[key].logo}
