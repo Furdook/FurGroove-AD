@@ -111,13 +111,15 @@ const Hamburger = () => {
           className="hidden"
           onClick={() => handleMenuOpen()}
         />
-        <div id="burger" className="flex flex-col gap-2">
-          <div className="stripe  h-1 w-12 rounded-sm bg-accent-400 group-hover:bg-accent-500"></div>
-          <div className="stripe duration-400 ml-auto h-1 w-10 rounded-sm bg-accent-400 transition-all group-hover:w-12 group-hover:bg-accent-500"></div>
-          <div className="stripe ml-auto h-1 w-8 rounded-sm bg-accent-400 transition-all duration-300 group-hover:w-12 group-hover:bg-accent-500"></div>
-        </div>
+        <span
+          id="burger"
+          className="absolute left-[-3rem] top-[-0.25rem] flex h-auto flex-col gap-2"
+        >
+          <span className="stripe relative block h-1 w-12 rounded-sm bg-accent-400 group-hover:bg-accent-500"></span>
+          <span className="stripe duration-400 relative ml-auto block h-1 w-10 rounded-sm bg-accent-400 transition-all group-hover:w-12 group-hover:bg-accent-500"></span>
+          <span className="stripe relative ml-auto block h-1 w-8 rounded-sm bg-accent-400 transition-all duration-300 group-hover:w-12 group-hover:bg-accent-500"></span>
+        </span>
       </label>
     </>
-    /* </div> */
   );
 };

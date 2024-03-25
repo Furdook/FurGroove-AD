@@ -8,10 +8,10 @@ import Tickets from "./tickets/page";
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <section className="h-screen flex-col">
+      <header className="h-screen flex-col">
         <img src="/logo.webp" alt="" />
-        <h2 className="text-accent-400">FORT33 - Leusden</h2>
-      </section>
+        <h1 className="text-accent-400">FORT33 - Leusden</h1>
+      </header>
       <Transition />
       <Information />
       <Location />

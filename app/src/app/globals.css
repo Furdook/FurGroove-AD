@@ -33,7 +33,9 @@ span {
   font-size: 3rem;
 }
 
-section:not(#transition) {
+section:not(#transition),
+header,
+.section {
   display: flex;
   max-width: 896px;
   margin-inline: auto;
@@ -42,14 +44,14 @@ section:not(#transition) {
   align-items: center;
 }
 
-#ticket {
+.ticket {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-#ticket::before,
-#ticket::after {
+.ticket::before,
+.ticket::after {
   content: "";
   position: absolute;
   left: 0;
@@ -59,16 +61,16 @@ section:not(#transition) {
   background-size: 10%;
 }
 
-#ticket::before {
+.ticket::before {
   top: -1vw;
 }
 
-#ticket::after {
+.ticket::after {
   bottom: -1vw;
 }
 
-#ticket-seperator::before,
-#ticket-seperator::after {
+.ticket-seperator::before,
+.ticket-seperator::after {
   content: "";
   position: absolute;
   height: 5vw;
@@ -79,11 +81,11 @@ section:not(#transition) {
   top: -2.5vw;
 }
 
-#ticket-seperator::before {
+.ticket-seperator::before {
   left: -2.5vw;
 }
 
-#ticket-seperator::after {
+.ticket-seperator::after {
   right: -2.5vw;
 }
 

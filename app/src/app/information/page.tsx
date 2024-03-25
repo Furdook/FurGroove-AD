@@ -9,9 +9,9 @@ import { MoveRight } from "lucide-react";
 
 export default function Information() {
   return (
-    <section
+    <div
       id="info"
-      className="h-screen flex-col px-6 lg:w-screen lg:flex-row lg:px-0"
+      className="section h-screen flex-col px-6 lg:w-screen lg:flex-row lg:px-0"
     >
       <img
         src="/djboy.webp"
@@ -53,6 +53,6 @@ export default function Information() {
           </CardContent>
         </Card>
       </article>
-    </section>
+    </div>
   );
 }
