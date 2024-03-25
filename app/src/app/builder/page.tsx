@@ -1,7 +1,7 @@
 "use client";
 
-import { TextCursor, TextIcon, CheckSquare, CheckCircle } from "lucide-react";
-import Draggable from "@/components/builder/draggable";
+import { X } from "lucide-react";
+import { draggables } from "@/components/builder/draggables";
 import Droppable from "@/components/builder/droppable";
 import { DndContext } from "@dnd-kit/core";
 import { PencilLine } from "lucide-react";
@@ -10,42 +10,17 @@ import Text from "@/components/builder/text";
 import Textarea from "@/components/builder/textarea";
 import Checkbox from "@/components/builder/checkbox";
 import { Button } from "@/components/ui/button";
+import Radio from "@/components/builder/radio";
 
 export default function Builder() {
   const [isDropped, setIsDropped] = useState(false);
   const [isDragging, setIsDragging] = useState(0);
   const [form, setForm] = useState<React.ReactElement[]>([]);
-  const formItems = [<Text />, <Textarea />, <Checkbox count={2} />];
-
-  const draggables = [
-    <Draggable
-      {...{
-        icon: <TextCursor size={16} className="mt-[3px]" />,
-        text: "Text Input",
-        id: 1,
-      }}
-    />,
-    <Draggable
-      {...{
-        icon: <TextIcon size={16} className="mt-[3px]" />,
-        text: "Textarea",
-        id: 2,
-      }}
-    />,
-    <Draggable
-      {...{
-        icon: <CheckSquare size={16} className="mt-[3px]" />,
-        text: "Checkbox",
-        id: 3,
-      }}
-    />,
-    <Draggable
-      {...{
-        icon: <CheckCircle size={16} className="mt-[3px]" />,
-        text: "Radio",
-        id: 4,
-      }}
-    />,
+  const formItems = [
+    <Text />,
+    <Textarea />,
+    <Checkbox count={2} />,
+    <Radio count={2} />,
   ];
 
   function handleDragEnd(event: any) {
@@ -94,7 +69,7 @@ export default function Builder() {
 
           {form.map((item, index) => {
             return (
-              <div>
+              <div className="relative w-full rounded-lg border-2 border-accent-300/30 p-6">
                 {item}
                 {form[index].type.toString().includes("Checkbox") ? (
                   <Button
@@ -111,15 +86,27 @@ export default function Builder() {
                     Add Option
                   </Button>
                 ) : null}
-                <Button
-                  variant="destructive"
-                  className="mt-2 w-full"
+                {form[index].type.toString().includes("Radio") ? (
+                  <Button
+                    className="mt-2 w-full"
+                    variant="outline"
+                    onClick={() => {
+                      setForm([
+                        ...form.slice(0, index),
+                        <Radio count={form[index].props.count + 1} />,
+                        ...form.slice(index + 1),
+                      ]);
+                    }}
+                  >
+                    Add Option
+                  </Button>
+                ) : null}
+                <X
+                  className="absolute right-0 top-0 cursor-pointer text-red hover:scale-110"
                   onClick={() => {
                     setForm(form.filter((_, i) => i !== index));
                   }}
-                >
-                  Remove Field
-                </Button>
+                />
               </div>
             );
           })}

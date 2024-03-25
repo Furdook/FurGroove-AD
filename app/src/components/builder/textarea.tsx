@@ -2,7 +2,7 @@ import Input from "./input";
 
 export default function Textarea() {
   return (
-    <label>
+    <label className="w-full">
       <Input />
       <textarea
         disabled

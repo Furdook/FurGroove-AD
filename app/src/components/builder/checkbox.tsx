@@ -3,7 +3,7 @@ import Input from "./input";
 
 export default function Checkbox(props: { count: number }) {
   return (
-    <label className="flex flex-col gap-2">
+    <label className="flex w-full flex-col gap-2">
       <Input />
       {[...Array(props.count)].map((_, i) => {
         return checkboxInput(i);

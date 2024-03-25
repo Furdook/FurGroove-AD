@@ -2,7 +2,7 @@ import Input from "./input";
 
 export default function Text() {
   return (
-    <label className="block">
+    <label className="w-full">
       <Input />
       <input
         disabled
