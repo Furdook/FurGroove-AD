@@ -33,7 +33,7 @@ span {
   font-size: 3rem;
 }
 
-section:not(#transition),
+section:not(#transition, #builder),
 header,
 .section {
   display: flex;

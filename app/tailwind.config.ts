@@ -37,6 +37,7 @@ const config: Config = {
         400: "#A2BFFD",
         300: "#EFF2FF",
       },
+      red: "#FF5B5B",
     },
   },
   plugins: [],

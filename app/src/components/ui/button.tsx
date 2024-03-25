@@ -14,6 +14,8 @@ const buttonVariants = cva(
         secondary: "bg-primary-500 hover:bg-primary-600 text-accent-300",
         outline:
           "border border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-primary-900",
+        destructive:
+          "border border-red text-white hover:bg-red hover:text-primary-900",
       },
       size: {
         default: "h-10 px-4 py-2",
