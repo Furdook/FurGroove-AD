@@ -2,7 +2,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { MoveRight } from "lucide-react";
@@ -33,7 +32,7 @@ export default function Information() {
           <CardContent className="flex flex-col">
             <CardTitle className="m text-accent-400">November</CardTitle>
             <CardTitle className="text-4xl">
-              12<strong className="text-2xl font-normal opacity-50">TH</strong>
+              2<strong className="text-2xl font-normal opacity-50">TH</strong>
             </CardTitle>
             <hr className="my-2 w-full border-accent-400" />
             <CardDescription>20:00</CardDescription>
@@ -46,7 +45,7 @@ export default function Information() {
           <CardContent className="ml-auto flex flex-col text-right">
             <CardTitle className="text-accent-400">November</CardTitle>
             <CardTitle className="text-4xl ">
-              13<strong className="text-2xl font-normal opacity-50">TH</strong>
+              3<strong className="text-2xl font-normal opacity-50">TH</strong>
             </CardTitle>
             <hr className="my-2 w-full border-accent-400" />
             <CardDescription>02:00</CardDescription>
