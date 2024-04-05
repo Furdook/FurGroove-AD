@@ -34,19 +34,19 @@ const tickets = [
     type: "Early Bird",
     colour: "bg-primary-600",
     price: "€ 15,-",
-    size: "w-[100%]",
+    size: "w-full",
   },
   {
     type: "Standard",
     colour: "bg-primary-700",
     price: "€ 20,-",
-    size: "w-[80%]",
+    size: "w-80p",
   },
   {
     type: "Late Bird",
     colour: "bg-primary-800",
     price: "€ 25,-",
-    size: "w-[60%]",
+    size: "w-60p",
   },
 ];
 
