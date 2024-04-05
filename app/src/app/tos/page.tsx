@@ -42,7 +42,7 @@ export default function TOS() {
           {tosItems.map((item, index) => {
             return (
               <li key={index} className="list-disc pt-6 lg:pt-4">
-                <p className=" text-accent-300 ">{item}</p>
+                <p className="text-accent-300">{item}</p>
               </li>
             );
           })}
