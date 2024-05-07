@@ -19,16 +19,14 @@ export default function Information() {
       />
       <article>
         <p className="my-auto leading-8">
-          The party starts at <strong className="text-accent-400">20:00</strong>{" "}
-          and will keep you busy for{" "}
-          <strong className="text-accent-400">6 full hours</strong>. We got our
-          own DJ's, known from{" "}
-          <strong className="text-accent-400">Summerbo.at</strong> and several
-          cons all over Europe. They will play all kinds of styles so always
-          something for you! Feeling like chilling a bit after dancing? Go cool
-          down outside with a drink and snack! All attendees get a badge with
-          lanyard for attending the dance. We will also sell special t-shirts
-          you can pre-order soon!
+          Come join us to a place where you can be yourself! FurGroove AD
+          edition welcomes not only furries but also puppies, gearheads and
+          everyone with an open mind. Together with{" "}
+          <strong className="underline decoration-accent-500 underline-offset-4">
+            Fort33
+          </strong>{" "}
+          we want to celebrate life and have an awesome tailwagging night with
+          purrfect DJ's and atmosphere!
         </p>
         <Card className="mt-6 flex w-full flex-row rounded-md bg-primary-800 px-4 py-2 ">
           <CardContent className="flex flex-col">
