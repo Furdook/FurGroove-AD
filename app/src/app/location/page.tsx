@@ -11,10 +11,17 @@ export default function Location() {
         <div className="relative my-auto flex-shrink">
           <p className="text-md relative ">
             <span className="absolute left-[-1rem] top-[-2rem]">“</span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip.
+            The location for this edition is{" "}
+            <strong className="text-accent-400">FORT33</strong>. A concert venue
+            with a big stage and bar where our house DJ's will move your paws.
+            Across the stage is a{" "}
+            <strong className="text-accent-400">big bar</strong> where you can
+            order drinks or some snacks. The bar accepts coins you can buy at
+            the entrance. Coins can be bought with cash or card. Our location
+            will also have a big enough{" "}
+            <strong className="text-accent-400">fursuit lounge</strong> to cool
+            down and store your suits. You can also get some water or dry up in
+            front of the fans. The whole location is wheelchair friendly.
             <span className="absolute bottom-[-3.5rem]">”</span>
           </p>
         </div>
