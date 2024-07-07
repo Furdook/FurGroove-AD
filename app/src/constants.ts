@@ -103,7 +103,8 @@ const artists = [
 const team = [
   {
     name: "Hunter",
-    quote: "Dutch Boy liking big things",
+    quote:
+      "Dutch event organiser and furry trash. Loves to create special events all over Europe.",
     position: "Event Organiser",
     image: "/hunter.webp",
     socials: {
@@ -121,24 +122,24 @@ const team = [
   },
   {
     name: "Menos",
-    quote: "Bark bark bark bark bark bark bark bark bark bark bark bark",
-    position: "Huisdier",
+    quote:
+      "Helping you get into the venue and making you sure you stay, with killer vibes",
+    position: "Registration",
     image: "/menos.webp",
     socials: null,
   },
   {
     name: "Jay the Wolf",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
+      "Dutch guy who loves to attend and organize furry events. Also a computer geek.",
     position: "Finance",
     image: "/jay.webp",
     socials: null,
   },
   {
     name: "Archomeda",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
-    position: "Registration",
+    quote: "They developed the website and all I got was this lousy quote",
+    position: "Location Support",
     image: "/arch.webp",
     socials: null,
   },
