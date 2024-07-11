@@ -2,6 +2,13 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { tickets } from "@/constants";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 export default function Tickets() {
   return (
     <div
@@ -34,10 +41,16 @@ export default function Tickets() {
           );
         })}
       </section>
-
-      <Button variant="outline" size="xl">
-        Purchase Ticket
-      </Button>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger className="rounded-md border border-accent-500 px-5 py-3 text-lg text-accent-500 transition-all duration-200 hover:saturate-0">
+            Purchase Ticket
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Tickets not yet available</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </div>
   );
 }

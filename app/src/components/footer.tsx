@@ -22,6 +22,10 @@ const footerItems = [
     title: "Announcements Channel",
     link: "",
   },
+  {
+    title: "FurGroove SFW",
+    link: "https://furgroove.club",
+  },
 ];
 
 export default function Footer() {

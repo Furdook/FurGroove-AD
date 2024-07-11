@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "FurGroove AD",
-  description: "SEO meta description",
+  description:
+    "Gear friendly furry party in the Netherlands. Be yourself all night long.",
 };
 
 export default function RootLayout({
